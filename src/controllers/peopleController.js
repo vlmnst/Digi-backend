@@ -6,11 +6,11 @@ controllers.getPeople = async (req, res) => {
 
   try {
     if (name) {
-      const response = await People.find({ name });
+      const response = await People.findOne({ name });
 
-      if (response.length < 1) {
+      if (!response) {
         return res.json({
-          status: 200,
+          status: 404,
           msg: `No character has that name, try another one. Ex: Darth Vader`,
         });
       }
