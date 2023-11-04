@@ -4,7 +4,7 @@ const { Schema, model } = require('mongoose');
 const peopleSchema = new Schema({
     id: UUID,
     name: String,
-    height: Number,
+    height: String,
     mass: String,
     hair_color: String,
     skin_color: String,
