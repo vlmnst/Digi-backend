@@ -1,3 +1,4 @@
+const Film = require("../Models/films");
 const People = require("../Models/people");
 
 const resourcesParams = [
@@ -6,6 +7,11 @@ const resourcesParams = [
         model: People,
         findOneKey: 'name'
     },
+    {
+        url: '/films',
+        model: Film,
+        findOneKey: 'name'
+    }
 
 ]
 

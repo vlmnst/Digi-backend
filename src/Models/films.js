@@ -11,7 +11,7 @@ const filmsSchema = new Schema({
     release_date: String,
     birth_year: String,
     characters: Array,
-    planets: String,
+    planets: Array,
     starships: Array,
     vehicles: Array,
     species: Array,

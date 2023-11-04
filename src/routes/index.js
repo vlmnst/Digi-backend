@@ -1,3 +1,6 @@
 const peopleRoutes = require('./peopleRoutes')
-
-module.exports = peopleRoutes;
+const filmRoutes = require('./filmRoutes')
+module.exports = {
+    peopleRoutes,
+    filmRoutes
+};
