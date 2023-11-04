@@ -10,7 +10,7 @@ const resourcesParams = [
     {
         url: '/films',
         model: Film,
-        findOneKey: 'name'
+        findOneKey: 'title'
     }
 
 ]

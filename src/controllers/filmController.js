@@ -2,16 +2,16 @@ const Films = require("../Models/films");
 const controllers = {};
 
 controllers.getFilms = async (req, res) => {
-  const { name } = req.query;
+  const { title } = req.query;
 
   try {
-    if (name) {
-      const response = await Films.findOne({ name });
+    if (title) {
+      const response = await Films.findOne({ title });
 
       if (!response) {
         return res.json({
           status: 404,
-          msg: `No film has that name, try another one. Ex: Darth Vader`,
+          msg: `No film has that name, try another one. Ex: A New Hope`,
         });
       }
 
