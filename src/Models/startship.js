@@ -3,21 +3,24 @@ const { Schema, model } = require('mongoose');
 
 const startshipSchema = new Schema({
     id: UUID,
-    title: String,
-    episode_id: Number,
-    opening_crawl: String,
-    director: String,
-    producer: String,
-    release_date: String,
-    birth_year: String,
-    characters: Array,
-    planets: Array,
-    starships: Array,
-    vehicles: Array,
-    species: Array,
+    name: String,
+    model: String,
+    manufacturer: String,
+    cost_in_credits: String,
+    length: String,
+    max_atmosphering_speed: String,
+    crew: String,
+    passengers: String,
+    cargo_capacity: String,
+    consumables: String,
+    hyperdrive_rating: String,
+    MGLT: String,
+    starship_class: String,
+    pilots: Array,
+    films: Array,
     created: String,
     edited: String,
-    url: String    
+    url: String,
 })
 
 const Startship = model('Startship', startshipSchema)
