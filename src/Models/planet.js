@@ -3,6 +3,7 @@ const { Schema, model } = require('mongoose');
 
 const planetSchema = new Schema({
     id: UUID,
+    name:String,
     rotation_period: String,
     orbital_period: String,
     diameter: String,
@@ -11,7 +12,7 @@ const planetSchema = new Schema({
     terrain: String,
     surface_water: String,
     population: String,
-    residents: String,
+    residents: Array,
     films: Array,
     created: String,
     edited: String,
