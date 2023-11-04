@@ -2,28 +2,22 @@ const People = require("../Models/people");
 const controllers = {};
 
 controllers.getPeople = async (req, res) => {
-  const { height } = req.query;
+  const { name } = req.query;
 
   try {
-    if (height) {
-      const response = await People.find({ height: { $lt: height } });
+    if (name) {
+      const response = await People.find({ name });
 
       if (response.length < 1) {
-        const response = await People.find({ height: { $ne: null } }).sort({
-          height: 1,
-        });
-
         return res.json({
           status: 200,
-          msg: `Enter a number greater than ${
-            response[0].height
-          } and less than ${response[response.length - 1].height}`,
+          msg: `No character has that name, try another one. Ex: Darth Vader`,
         });
       }
 
       return res.json({
         status: 200,
-        msg: `These are the characters whose height is less than ${height}`,
+        msg: `Is this the character you were looking for?`,
         data: response,
       });
     }
@@ -32,7 +26,7 @@ controllers.getPeople = async (req, res) => {
 
     return res.json({
       status: 200,
-      msg: `These are all the characters, if you want apply a filter use ?height=Number`,
+      msg: `These are all the characters`,
       data: response,
     });
   } catch (err) {
