@@ -3,7 +3,7 @@ const syncDB = require('./syncDB');
 
 const cronSync = () => {
     syncDB()
-    cron.schedule( '*/5 * * * *' , () => {
+    cron.schedule( process.env.CRON_INTERVAL , () => {
         syncDB()
     })
 }
