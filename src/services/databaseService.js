@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 
 
 const connectionDB = ( ) => {
-    mongoose.connect(process.env.MONGO_URL,  { useNewUrlParser: true, useUnifiedTopology: true })
-.then( connection => console.log( 'Connected successully' ) )
+    mongoose.connect(process.env.MONGO_URL)
+.then( connection => console.log( 'Connected successfully' ) )
 .catch( console.log );
 }
 
